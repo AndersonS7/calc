@@ -45,6 +45,49 @@ class Calc {
       console.error(error.message);
     }
   }
+
+  exponenciacao(n1, n2) {
+    try {
+      if (isNaN(n1) || isNaN(n2)) {
+        throw new Error("Apenas números");
+      }
+      return n1 ** n2;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  fatoracao(numero) {
+    try {
+      if (isNaN(numero)) {
+        throw new Error("Apenas números");
+      }
+
+      const fatores = [];
+
+      for (let i = 2; i <= numero; i++) {
+        while (numero % i === 0) {
+          fatores.push(i);
+          numero /= i;
+        }
+      }
+
+      return fatores;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  restoDivisao(n1, n2) {
+    try {
+      if (isNaN(n1) || isNaN(n2)) {
+        throw new Error("Apenas números");
+      }
+      return n1 % n2;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
 }
 
 let calc = new Calc();
@@ -67,27 +110,34 @@ var schema = {
     numero2: {
       pattern: /^[0-9]+$/,
       message: `
-            informe o número do operador:
-                1 - somar
-                2 - subtrair
-                3 - multiplicar
-                4 - dividir
-                7 - porcentagem
-            `,
+              informe o número do operador:
+                  1 - somar
+                  2 - subtrair
+                  3 - multiplicar
+                  4 - dividir
+                  5 - exponenciar
+                  6 - raiz
+                  7 - porcentagem
+                  8 - resto da divisão
+                  9 - fatoração
+              `,
     },
   },
 };
 
 console.log(
   `
-    informe o número do operador:
-        1 - somar
-        2 - subtrair
-        3 - multiplicar
-        4 - dividir
-        7 - porcentagem
-    
-        `
+      informe o número do operador:
+          1 - somar
+          2 - subtrair
+          3 - multiplicar
+          4 - dividir
+          5 - exponenciar
+          6 - raiz
+          7 - porcentagem
+          8 - resto da divisão
+          9 - fatoração
+          `
 );
 prompt.start();
 
@@ -100,4 +150,7 @@ prompt.get(schema, function (err, result) {
   if (operador == 2) console.log(`${valor1} - ${valor2} = ${valor1 - valor2}`);
   if (operador == 3) console.log(`${valor1} * ${valor2} = ${valor1 * valor2}`);
   if (operador == 4) console.log(`${valor1} / ${valor2} = ${valor1 / valor2}`);
+  if (operador == 5)
+    console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`);
+  if (operador == 8) console.log(`${valor1} % ${valor2} = ${valor1 % valor2}`);
 });
