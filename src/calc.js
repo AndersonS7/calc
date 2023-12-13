@@ -85,6 +85,18 @@ class Calc {
         }
     }
 
+    restoDivisao(n1, n2) {
+        try {
+            if (isNaN(n1) || isNaN(n2)) {
+                throw new Error("Apenas números");
+            }
+            return n1 % n2;
+
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
 
 }
 
@@ -115,6 +127,10 @@ var schema = {
                 3 - multiplicar
                 4 - dividir
                 5 - exponenciar
+                6 - raiz
+                7 - porcentagem
+                8 - resto da divisão
+                9 - fatoração
             `,
     }
   }
@@ -128,7 +144,10 @@ console.log(
         3 - multiplicar
         4 - dividir
         5 - exponenciar
-    
+        6 - raiz
+        7 - porcentagem
+        8 - resto da divisão
+        9 - fatoração
         `
 )
 prompt.start();
@@ -148,6 +167,8 @@ prompt.get(schema, function (err, result) {
     console.log(`${valor1} / ${valor2} = ${valor1 / valor2}`)
   if (operador == 5)
     console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`)
+  if (operador == 8)
+    console.log(`${valor1} % ${valor2} = ${valor1 % valor2}`)
 });
 
 
