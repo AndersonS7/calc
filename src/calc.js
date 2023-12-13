@@ -52,6 +52,28 @@ class Calc {
         }
     }
 
+    fatoracao(numero) {
+        try {
+            if (isNaN(numero)) {
+                throw new Error("Apenas números");
+            }
+
+            const fatores = [];
+
+            for (let i = 2; i <= numero; i++) {
+                while (numero % i === 0) {
+                    fatores.push(i);
+                    numero /= i;
+                }
+            }
+
+            return fatores;
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
+
 }
 
 let calc = new Calc();
