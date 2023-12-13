@@ -61,29 +61,29 @@ class Calc {
   }
 
 
-  fatoracao(numero) {
-    try {
-      if (isNaN(numero)) {
-        throw new Error("Apenas números");
-      }
+    fatoracao(numero) {
+        try {
+            if (isNaN(numero)) {
+                throw new Error("Apenas números");
+            }
 
-      const fatores = [];
+            const fatores = [];
 
-      for (let i = 2; i <= numero; i++) {
-        while (numero % i === 0) {
-          fatores.push(i);
-          numero /= i;
+            for (let i = 2; i <= numero; i++) {
+                while (numero % i === 0) {
+                    fatores.push(i);
+                    numero /= i;
+                }
+            }
+
+            return fatores;
+        } catch (error) {
+            console.error(error.message);
         }
-      }
 
-      return fatores;
-    } catch (error) {
-      console.error(error.message);
     }
-
-  }
-
-  porcentagem(n1, n2) {
+  
+    porcentagem(n1, n2) {
     try {
       if (isNaN(n1) || isNaN(n2)) {
         throw new Error("Apenas números");
@@ -93,8 +93,8 @@ class Calc {
       console.error(error.message);
     }
   }
-
-  RaizQuadrada(n1) {
+  
+    RaizQuadrada(n1) {
     try {
       if (isNaN(n1)) {
         throw new Error("Apenas números");
@@ -104,12 +104,11 @@ class Calc {
       console.error(error.message);
     }
   }
-}
+  }
 
 
 
 let calc = new Calc();
-
 
 // prompt -------------------
 var prompt = require("prompt");
@@ -168,7 +167,7 @@ prompt.get(schema, function (err, result) {
   let valor2 = Number(result.numero2);
 
   if (operador == 1)
-    console.log(`${valor1} + ${valor2} = ${calc.somar(valor1, valor2)}`)
+    console.log(`${valor1} + ${valor2} = ${valor1 + valor2}`)
   if (operador == 2)
     console.log(`${valor1} - ${valor2} = ${valor1 - valor2}`)
   if (operador == 3)
@@ -177,12 +176,12 @@ prompt.get(schema, function (err, result) {
     console.log(`${valor1} / ${valor2} = ${valor1 / valor2}`)
   if (operador == 5)
     console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`)
-  if (operador == 6)
+   if (operador == 6)
     console.log(`RaizQuadrada do 1 numero : ${valor1} = ${calc.RaizQuadrada(valor1)}, RaizQuadrada do 2 numero : ${valor2} = ${calc.RaizQuadrada(valor2)}`)
-  if (operador == 7)
+   if (operador == 7)
     console.log(`${valor1} é ${(valor1 / valor2) * 100}% de ${valor2}`)
   if (operador == 8)
     console.log(`${valor1} % ${valor2} = ${valor1 % valor2}`)
-  if (operador == 9)
+    if (operador == 9)
     console.log(`${valor1} ! = ${calc.fatoracao(valor1)}`);
 });
