@@ -93,6 +93,17 @@ class Calc {
       console.error(error.message);
     }
   }
+  
+    RaizQuadrada(n1) {
+    try {
+      if (isNaN(n1)) {
+        throw new Error("Apenas números");
+      }
+      return Math.sqrt(n1);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
   }
 
 
@@ -165,6 +176,8 @@ prompt.get(schema, function (err, result) {
     console.log(`${valor1} / ${valor2} = ${valor1 / valor2}`)
   if (operador == 5)
     console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`)
+   if (operador == 6)
+    console.log(`RaizQuadrada do 1 numero : ${valor1} = ${calc.RaizQuadrada(valor1)}, RaizQuadrada do 2 numero : ${valor2} = ${calc.RaizQuadrada(valor2)}`)
    if (operador == 7)
     console.log(`${valor1} é ${(valor1 / valor2) * 100}% de ${valor2}`)
   if (operador == 8)
