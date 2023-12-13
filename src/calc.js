@@ -10,7 +10,6 @@ class Calc {
         throw new Error("Apenas números");
       }
       return n1 + n2;
-
     } catch (error) {
       console.error(error.message);
     }
@@ -22,7 +21,6 @@ class Calc {
         throw new Error("Apenas números");
       }
       return n1 - n2;
-
     } catch (error) {
       console.error(error.message);
     }
@@ -34,7 +32,6 @@ class Calc {
         throw new Error("Apenas números");
       }
       return n1 * n2;
-
     } catch (error) {
       console.error(error.message);
     }
@@ -58,11 +55,11 @@ class Calc {
         throw new Error("Apenas números");
       }
       return n1 ** n2;
-
     } catch (error) {
       console.error(error.message);
     }
   }
+
 
     fatoracao(numero) {
         try {
@@ -83,28 +80,27 @@ class Calc {
         } catch (error) {
             console.error(error.message);
         }
+
     }
-
-    restoDivisao(n1, n2) {
-        try {
-            if (isNaN(n1) || isNaN(n2)) {
-                throw new Error("Apenas números");
-            }
-            return n1 % n2;
-
-        } catch (error) {
-            console.error(error.message);
-        }
+  
+    porcentagem(n1, n2) {
+    try {
+      if (isNaN(n1) || isNaN(n2)) {
+        throw new Error("Apenas números");
+      }
+      return (n1 / n2) * 100;
+    } catch (error) {
+      console.error(error.message);
     }
+  }
+  }
 
 
-}
 
 let calc = new Calc();
 
-
 // prompt -------------------
-var prompt = require('prompt');
+var prompt = require("prompt");
 
 var schema = {
   properties: {
@@ -121,6 +117,7 @@ var schema = {
     numero2: {
       pattern: /^[0-9]+$/,
       message: `
+
             informe o número do operador:
                 1 - somar
                 2 - subtrair
@@ -150,6 +147,7 @@ console.log(
         9 - fatoração
         `
 )
+
 prompt.start();
 
 prompt.get(schema, function (err, result) {
@@ -167,10 +165,10 @@ prompt.get(schema, function (err, result) {
     console.log(`${valor1} / ${valor2} = ${valor1 / valor2}`)
   if (operador == 5)
     console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`)
+   if (operador == 7)
+    console.log(`${valor1} é ${(valor1 / valor2) * 100}% de ${valor2}`)
   if (operador == 8)
     console.log(`${valor1} % ${valor2} = ${valor1 % valor2}`)
     if (operador == 9)
     console.log(`${valor1} ! = ${calc.fatoracao(valor1)}`);
 });
-
-
