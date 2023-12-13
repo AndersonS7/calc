@@ -73,6 +73,18 @@ class Calc {
         }
     }
 
+    restoDivisao(n1, n2) {
+        try {
+            if (isNaN(n1) || isNaN(n2)) {
+                throw new Error("Apenas números");
+            }
+            return n1 % n2;
+
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
 
 }
 
@@ -102,6 +114,8 @@ var schema = {
                 2 - subtrair
                 3 - multiplicar
                 4 - dividir
+                8 - resto da divisão
+                9 -
             `,
         }
     }
@@ -114,6 +128,8 @@ console.log(
         2 - subtrair
         3 - multiplicar
         4 - dividir
+        8 - resto da divisão
+        9 - 
     
         `
 )
