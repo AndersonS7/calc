@@ -169,6 +169,8 @@ prompt.get(schema, function (err, result) {
     console.log(`${valor1} ** ${valor2} = ${valor1 ** valor2}`)
   if (operador == 8)
     console.log(`${valor1} % ${valor2} = ${valor1 % valor2}`)
+    if (operador == 9)
+    console.log(`${valor1} ! = ${calc.fatoracao(valor1)}`);
 });
 
 
