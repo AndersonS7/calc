@@ -82,18 +82,8 @@ class Calc {
         }
 
     }
-  }
-
-      const fatores = [];
-
-      for (let i = 2; i <= numero; i++) {
-        while (numero % i === 0) {
-          fatores.push(i);
-          numero /= i;
-        }
-      }
-
-  porcentagem(n1, n2) {
+  
+    porcentagem(n1, n2) {
     try {
       if (isNaN(n1) || isNaN(n2)) {
         throw new Error("Apenas números");
@@ -103,7 +93,9 @@ class Calc {
       console.error(error.message);
     }
   }
-}
+  }
+
+
 
 let calc = new Calc();
 
