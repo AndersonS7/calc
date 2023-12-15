@@ -106,8 +106,6 @@ class Calc {
   }
   }
 
-
-
 let calc = new Calc();
 
 // prompt -------------------
@@ -127,19 +125,7 @@ var schema = {
     },
     numero2: {
       pattern: /^[0-9]+$/,
-      message: `
-
-            informe o número do operador:
-                1 - somar
-                2 - subtrair
-                3 - multiplicar
-                4 - dividir
-                5 - exponenciar
-                6 - raiz
-                7 - porcentagem
-                8 - resto da divisão
-                9 - fatoração
-            `,
+      message: 'Apenas números!',
     }
   }
 };
