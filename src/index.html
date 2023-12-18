@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src=""></script>
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <main>
+        <section class="container-pai">
+
+            <!--tela onde aparece o resultado das operações -->
+            <div class="tela">
+                <div class="tela-numero">
+                    <div class="numero">
+                        <h1 id="resultado">0</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="numeros-operacao">
+                <div class="container-operacao">
+                    <div class="container-numeros">
+                        <input type="button" name="" id="azul" value="MRC" onclick="">
+                        <input type="button" name="" id="azul" value="M -" onclick="">
+                        <input type="button" name="" id="azul" value="M +" onclick="">
+
+                        <input type="button" name="" id="botao" value="7" onclick="">
+                        <input type="button" name="" id="botao" value="8" onclick="">
+                        <input type="button" name="" id="botao" value="9" onclick="">
+                        <input type="button" name="" id="botao" value="4" onclick="">
+                        <input type="button" name="" id="botao" value="5" onclick="">
+                        <input type="button" name="" id="botao" value="6" onclick="">
+                        <input type="button" name="" id="botao" value="1" onclick="">
+                        <input type="button" name="" id="botao" value="2" onclick="">
+                        <input type="button" name="" id="botao" value="3" onclick="">
+                        <input type="button" name="" id="botao" value="0" onclick="">
+                        <input type="button" name="" id="botao" value="." onclick="">
+                        <input type="button" name="" id="botao" value="+/-" onclick="">
+                    </div>
+
+                    <div class="operacao">
+                        <input type="button" name="" id="azul" value="CE" onclick="">
+                        <input type="button" name="" id="vermelho" value="ON/OFF" onclick="">
+
+                        <input type="button" name="" id="azul-G" value="%" onclick="">
+                        <input type="button" name="" id="azul-G" value="√" onclick="">
+                        <input type="button" name="" id="azul-G" value="x" onclick="">
+                        <input type="button" name="" id="azul-G" value="÷" onclick="">
+
+                        <div class="maisIgualMenos">
+
+                            <input type="button" name="" id="azulMais" value="+" onclick="pegarValorDoInput()">
+
+                            <div>
+                                <input type="button" name="" id="azul-G" value="-" onclick="">
+                                <input type="button" name="" id="azul-G" value="=" onclick="">
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+<script src="/src/calc.js"></script>
+</body>
+
+</html>
