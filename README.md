@@ -14,7 +14,8 @@ Projeto de calculadora sem interface, apenas JavaScript com prompt.
 - Branch separada sim, seguindo a regras: feature para dev e release para prod
 - com comentários 
 
-#### Integrantes da Squad 
+
+#### Integrantes da Squad CodeVerse
 
 <a href="https://github.com/AndersonS7">Anderson Queiroz da Silva</a><br>
 <a href="https://github.com/HaralanS">Haralan Santana</a><br>
